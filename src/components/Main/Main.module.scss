@@ -1,0 +1,31 @@
+@import "../../utils/variables.scss";
+
+.main {
+  background-color: #fff;
+  padding: 40px 35px;
+  border-radius: 15px;
+  display: grid;
+  width: 100%;
+  gap: 25px;
+  font-weight: 700;
+  &__headline {
+    color: #576B6C;
+    margin-bottom: 5px;
+  }
+}
+
+.calc {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  &__container {
+    margin-bottom: 30px;
+  }
+}
+
+.total {
+  padding: 40px;
+  background-color: $darkGreen;
+  border-radius: 10px;;
+}
+

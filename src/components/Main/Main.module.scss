@@ -21,6 +21,12 @@
   &__container {
     margin-bottom: 30px;
   }
+  &__radio {
+    display: grid;
+    grid-template-rows: repeat(auto);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 17px;
+  }
 }
 
 .total {

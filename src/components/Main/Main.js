@@ -1,5 +1,8 @@
 import Input from '../Input/Input';
 import classes from './Main.module.scss';
+import dollar from '../../images/icon-dollar.svg'
+import man from '../../images/icon-person.svg'
+
 
 const Main = () => {
   const tipAmoutList = [5, 10, 15, 25, 50];
@@ -9,7 +12,7 @@ const Main = () => {
       <section className={classes.calc}>
         <div className={classes.calc__container}>
           <h3 className={classes.main__headline}>Bill</h3>
-          <Input type="text" id="total" />
+          <Input type="text" id="total" icon={dollar} />
         </div>
         <div className={classes.calc__container}>
           <h3 className={classes.main__headline}>Select Tip %</h3>
@@ -23,9 +26,11 @@ const Main = () => {
                 name="tip_amount"
               />
             ))}
-
-            {/* <Input type="radio" /> */}
           </div>
+        </div>
+        <div className={classes.calc__container}>
+          <h3 className={classes.main__headline}>Number of People</h3>
+          <Input type="text" id="total" icon={man} />
         </div>
       </section>
       <section className={classes.total}>12</section>

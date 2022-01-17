@@ -11,18 +11,15 @@ const Input = (props) => {
   switch (props.type) {
     case 'text':
       return (
-        <>
-          <label
-            htmlFor={props.id}
-            className={classes.input__labelBefor}
-          ></label>
+        <div className={classes.input__container}>
+          <img src={props.icon} className={classes.input__icon} />
           <input
             className={classes.input}
             {...props}
             value={bill}
             onChange={valueChangeHandler}
           />
-        </>
+        </div>
       );
     case 'radio':
       return (

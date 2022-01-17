@@ -12,16 +12,15 @@
   font-weight: bold;
   font-size: 24px;
   font-family: 'Space Mono';
-  &__labelBefor {
+  width: 100%;
+  &__container {
     position: relative;
-    &::before {
-      content: url('../../images/icon-dollar.svg');
-      width: 11px;
-      position: absolute;
-      z-index: 5;
-      top: -1px;
-      left: 15px;
-    }
+  }
+  &__icon {
+    position: absolute;
+    z-index: 1;
+    top: 15px;
+    left: 15px;
   }
 }
 

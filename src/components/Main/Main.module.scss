@@ -6,13 +6,21 @@
   border-radius: 15px;
   display: grid;
   width: 100%;
-  max-width: 375px;
   gap: 25px;
   font-weight: 700;
   box-sizing: border-box;
+  max-width: 700px;
+  @media (min-width: 999px) {
+    grid-template-columns: 1fr 1fr;
+    max-width: 900px;
+  }
   &__headline {
     color: #576B6C;
     margin-bottom: 5px;
+    font-size: 16px;
+    &_color_invert {
+      color: #fff;
+    }
   }
 }
 
@@ -22,6 +30,9 @@
   flex-direction: column;
   &__container {
     margin-bottom: 30px;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
   &__radio {
     display: grid;
@@ -32,8 +43,45 @@
 }
 
 .total {
-  padding: 40px;
+  padding: 30px;
   background-color: $darkGreen;
-  border-radius: 10px;;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &__heading {
+    grid-area: heading;
+    margin: 0;
+  }
+  &__subtitle {
+    color: #729BA1;
+    font-size: 14px;
+    grid-area: subheading;
+  }
+  &__container {
+    display: grid;
+    grid-template-areas: 
+    "heading total"
+    "subheading total";
+    margin-bottom: 25px;
+  }
+  &__sum {
+    grid-area: total;
+    text-align: right;
+    vertical-align: middle;
+    font-size: 30px;
+    color: $lightGreen;
+  }
+  &__reset {
+    padding: 10px;
+    font-weight: bold;
+    background-color: $lightGreen;
+    color: $darkGreen;
+    text-transform: uppercase;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 }
 

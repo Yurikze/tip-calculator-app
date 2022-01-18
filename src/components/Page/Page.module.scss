@@ -7,9 +7,13 @@
 .page {
   font-family: 'Space Mono';
   background-color: #C5E4E7;
-  height: 100vh;
+  // height: 100vh;
   display: flex;
   align-items: center;
   flex-direction: column;
   min-width: 375px;
+  padding-bottom: 20px;
+  @media screen {
+    height: 100vh;
+  }
 }

@@ -1,11 +1,16 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import classes from './Input.module.scss';
 
 const Input = (props) => {
-  const [bill, setBill] = useState('');
+  const [value, setValue] = useState('');
+
+  useEffect(() => {
+    props.onChange(value)
+    console.log(value)
+  }, [value])
 
   const valueChangeHandler = (e) => {
-    setBill(e.target.value);
+    setValue(e.target.value);
   };
 
   switch (props.type) {
@@ -16,7 +21,7 @@ const Input = (props) => {
           <input
             className={classes.input}
             {...props}
-            value={bill}
+            value={value}
             onChange={valueChangeHandler}
           />
         </div>
@@ -30,7 +35,7 @@ const Input = (props) => {
             type={props.type}
             name={props.name}
             className={classes.radio__input}
-            onChange={(e) => console.log(e.target.value)}
+            onChange={valueChangeHandler}
           />
           <label
             htmlFor={`id${props.id}`}

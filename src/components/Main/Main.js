@@ -10,7 +10,7 @@ const Main = () => {
 
   const [total, setTotal] = useState(null)
   const [tips, setTips] = useState(null)
-  const [guests, setGuests] = useState(null)
+  const [guests, setGuests] = useState(1)
 
   const [totalPerGuest, setTotalPerGuest ] = useState(0)
   const [tipsPerGuest, setTipsPerGuest] = useState(0)
@@ -21,11 +21,10 @@ const Main = () => {
 
   const handleTipChange = (val) => {
     setTips(val)
-    console.log(val)
   }
 
   const handleGuestChange = (val) => {
-    val && setGuests(val)
+    setGuests(val)
   }
 
   useEffect(() => {
@@ -40,7 +39,7 @@ const Main = () => {
       <section className={classes.calc}>
         <div className={classes.calc__container}>
           <h3 className={classes.main__headline}>Bill</h3>
-          <Input type="text" id="total" icon={dollar} onChange={handleTotalChange} />
+          <Input type="text" id="total" icon={dollar} onChange={handleTotalChange} value={total} />
         </div>
         <div className={classes.calc__container}>
           <h3 className={classes.main__headline}>Select Tip %</h3>
@@ -59,7 +58,7 @@ const Main = () => {
         </div>
         <div className={classes.calc__container}>
           <h3 className={classes.main__headline}>Number of People</h3>
-          <Input type="text" id="personCount" icon={man} onChange={handleGuestChange} />
+          <Input type="text" id="personCount" icon={man} onChange={handleGuestChange} value={guests} />
         </div>
       </section>
       <section className={classes.total}>

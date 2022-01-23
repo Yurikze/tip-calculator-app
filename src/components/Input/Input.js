@@ -4,12 +4,8 @@ import classes from './Input.module.scss';
 const Input = (props) => {
   const [value, setValue] = useState('');
 
-  useEffect(() => {
-    props.onChange(value)
-    console.log(value)
-  }, [value])
-
   const valueChangeHandler = (e) => {
+    props.onChange(e.target.value)
     setValue(e.target.value);
   };
 
@@ -21,7 +17,7 @@ const Input = (props) => {
           <input
             className={classes.input}
             {...props}
-            value={value}
+            value={props.value || ''}
             onChange={valueChangeHandler}
           />
         </div>
